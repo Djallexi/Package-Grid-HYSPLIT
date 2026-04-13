@@ -1,0 +1,33 @@
+Package: DisperseR
+Title: HYSPLIT-Based Air Dispersion and Exposure Modeling
+Version: 0.1.0
+Authors@R: person("Djallexi", role = c("aut", "cre"), email = "votre@email.com")
+Description: Provides functions to run HYSPLIT dispersion simulations in
+    parallel, link parcel trajectories to geographic grids, and compute
+    population exposure to air pollutants (e.g. SO2). Updated fork of the
+    original disperseR package with removed broken dependencies.
+License: MIT + file LICENSE
+Imports:
+    data.table,
+    sf,
+    terra,
+    raster,
+    parallel,
+    parallelly,
+    lubridate,
+    arrow,
+    fst,
+    maps,
+    rnaturalearth,
+    tibble,
+    ncdf4
+Remotes:
+    rich-iannone/splitr
+Suggests:
+    ggplot2,
+    viridis,
+    gridExtra,
+    ggrepel
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
