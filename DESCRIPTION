@@ -1,4 +1,4 @@
-Package: Updated DisperseR
+Package: UpdatedDisperseR
 Title: HYSPLIT-Based Air Dispersion and Exposure Modeling
 Version: 0.1.0
 Authors@R: person("Djallexi", role = c("aut", "cre"), email = "votre@email.com")
