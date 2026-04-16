@@ -1,0 +1,74 @@
+devtools::install_github("Djallexi/Package-Grid-HYSPLIT")
+
+library(UpdatedDisperseR)
+
+UpdatedDisperseR::create_dirs("~/work") #Create directories
+
+#Once directories are created, put "hpbl.mon.mean.nc" in main/input/hpbl.
+#Put your csv file in main/input/Plant Units. Your file must include for each units :
+# GPS point (x/y), height and if you want exposure datatable, an according variable (in our case : SO2emissions)
+
+#Now the setup is complete, you can open Disperser Year Job.R, setup and run it.
+#All the setup is in CONFIG, it's all documented.
+
+#Once the script is over, you have results csv created in main/output/linked_grids (and in main/output/exposure)
+
+#With those csv you can create graph
+
+plot <- plot_impact_sf_academic(
+  df               = exp_mon_ID_2022, #df       
+  subtitle         = "Hysplit Dispersion Weighted (Operationnal plants)",
+  file.name        = "Weighted_SO2_April_2022.png",
+  year             = 2022, 
+  month            = 4, #Choose a month. If annual df then NULL
+  uid_col          = "uID",      
+  uid_filter       = 6,       #filter units based on their ID/Uid NULL = all, sinon c(6, 12, ...)
+  color_palette    = "sentinel",
+  metric_col       = "hyads",
+  lon_col          = "lon",
+  lat_col          = "lat",
+  zoom             = TRUE,
+  xlim_manual      = c(20, 140),   #India : xlim_manual      = c(60, 100),
+  ylim_manual      = c(-10, 60),   #India : ylim_manual      = c(5, 38),
+  graph.dir        = "~/work/main/output/graph",
+  plot.name        = NULL,
+  max_points       = 50000000,
+  percentile_limit = 1,
+  alpha            = 0.7, #Opaqueness of points 
+  scale_type       = "manual", #log/linear/manual
+  scale_max_manual = 10000,
+)
+
+#Also a function to aggregate, you can either aggregate to annual/plants or both
+
+
+#by month
+df_month <- aggregate_hyads_dt(data,
+                               by_uid    = FALSE,
+                               by_month  = TRUE,
+                               lat_col   = "lat",
+                               lon_col   = "lon",
+                               uid_col   = "uID",
+                               month_col = "yearmonth",
+                               value_col = "hyads")
+#by month
+df_uID <- aggregate_hyads_dt(data,
+                               by_uid    = FALSE,
+                               by_month  = TRUE,
+                               lat_col   = "lat",
+                               lon_col   = "lon",
+                               uid_col   = "uID",
+                               month_col = "yearmonth",
+                               value_col = "hyads")
+#both
+df_total <- aggregate_hyads_dt(data,
+                               by_uid    = TRUE,
+                               by_month  = TRUE,
+                               lat_col   = "lat",
+                               lon_col   = "lon",
+                               uid_col   = "uID",
+                               month_col = "yearmonth",
+                               value_col = "hyads")
+
+
+
