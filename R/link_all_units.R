@@ -73,7 +73,7 @@ link_all_units <- function(units.run,
     return(linked_grids)
   }
 
-  units.run <- unique(units.run[, .(uID, ID)])
+  units.run <- unique(units.run[, list(uID, ID)])
 
   out <- units.run[, grids_link_parallel(.SD), by = seq_len(nrow(units.run))]
 
