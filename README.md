@@ -54,13 +54,18 @@ GITHUB_PAT=ghp_your_token_here
 
 Save, then **restart R**.
 
-### Step 3 — Install system dependency (Linux only)
+### Step 3 — Install system dependency (Linux only) and Splitrs
 
 HYSPLIT requires `libgfortran3`, which is not available on recent Ubuntu/Debian by default:
 
 ```r
 library(UpdatedDisperseR)
+
+#Install system dependency
 install_system_deps()
+
+#Install SplitR
+pak::pak('rich-iannone/splitr')
 ```
 
 > **macOS:** this step installs `gcc` via Homebrew automatically.  
