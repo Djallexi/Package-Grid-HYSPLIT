@@ -9,6 +9,7 @@ Description: Provides functions to run HYSPLIT dispersion simulations in
 License: MIT + file LICENSE
 SystemRequirements: HYSPLIT (https://www.ready.noaa.gov/HYSPLIT.php),
     libgfortran3 (Linux uniquement, installable via install_system_deps())
+VignetteBuilder: knitr
 Imports:
     data.table,
     sf,
