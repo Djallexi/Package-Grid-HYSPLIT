@@ -81,7 +81,7 @@ run_fac <- function(x,
   
   start_time <- Sys.time()
   
-  subset <- input.refs[x]
+  subset <- input.refs[x, ]
   print(subset)
   
   ## function to negate
