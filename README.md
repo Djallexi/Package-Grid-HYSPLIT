@@ -28,7 +28,7 @@ devtools::install_github("Djallexi/Package-Grid-HYSPLIT")
 
 ### Step 2 — Set your GitHub token (required to download met data)
 
-The package downloads meteorological files from NOAA. A GitHub PAT is required.
+If you clusterise multiple UpdatedDisperseR R session and want to launch simulations during a short time periode. A GitHub PAT can be required.
 
 **Create a token:** https://github.com/settings/tokens → Generate new token (classic) → check `repo` scope
 
@@ -58,7 +58,7 @@ install_system_deps()
 > **macOS:** this step installs `gcc` via Homebrew automatically.  
 > **Windows:** not supported — use WSL2 (Ubuntu) instead.
 
-### Step 4 — Create the working directory structure
+### Step 5 — Create the working directory structure
 
 ```r
 library(UpdatedDisperseR)
@@ -79,7 +79,7 @@ This creates:
       logs/
 ```
 
-### Step 5 — Add your input files
+### Step 6 — Add your input files
 
 | File | Where to put it | Description |
 |---|---|---|
@@ -88,7 +88,7 @@ This creates:
 
 ---
 
-## Running a simulation
+## Step 7 - Running a simulation
 
 Open `inst/scripts/Disperser Year Job.R` and edit the `CONFIG` block at the top:
 
@@ -126,7 +126,9 @@ exposure/
 
 ---
 
-## Visualisation
+Now you have your csv results, there is additionnal function you could use
+
+## Bonus Step - Visualisation
 
 ```r
 library(UpdatedDisperseR)
@@ -151,7 +153,7 @@ plot_impact_sf_academic(
 )
 ```
 
-## Aggregation
+## Bonus Step - Aggregation
 
 ```r
 # Aggregate by month (sum across all units)
