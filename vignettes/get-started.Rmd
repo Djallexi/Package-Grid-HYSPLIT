@@ -1,3 +1,11 @@
+---
+title: "Get started with UpdatedDisperseR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get started}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
 devtools::install_github("Djallexi/Package-Grid-HYSPLIT")
 
 library(UpdatedDisperseR)
