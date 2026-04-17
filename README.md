@@ -22,11 +22,11 @@ R package for running HYSPLIT dispersion simulations at scale and computing expo
 # Install devtools if needed
 install.packages("devtools")
 
-# Install UpdatedDisperseR
+# Install UpdatedDisperseR // Need to update to admit for vignettes
 devtools::install_github(
   "Djallexi/Package-Grid-HYSPLIT",
   build_vignettes = TRUE,
-  dependencies = TRUE,
+  dependencies = FALSE,
   force = TRUE
 )
 
@@ -65,6 +65,10 @@ install_system_deps()
 
 > **macOS:** this step installs `gcc` via Homebrew automatically.  
 > **Windows:** not supported — use WSL2 (Ubuntu) instead.
+
+### Step 4 — Open vignette // Still need to update to admit for vignettes so just open Step_by_step.R in inst/scripts
+
+vignette(package = "UpdatedDisperseR")
 
 ### Step 5 — Create the working directory structure
 
