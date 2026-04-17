@@ -24,6 +24,9 @@ install.packages("devtools")
 
 # Install UpdatedDisperseR
 devtools::install_github("Djallexi/Package-Grid-HYSPLIT")
+
+# Call UpdatedDisperseR
+library(UpdatedDisperseR)
 ```
 
 ### Step 2 — Set your GitHub token (required to download met data)
