@@ -7,6 +7,8 @@ Description: Provides functions to run HYSPLIT dispersion simulations in
     population exposure to air pollutants (e.g. SO2). Updated fork of the
     original disperseR package with removed broken dependencies.
 License: MIT + file LICENSE
+SystemRequirements: HYSPLIT (https://www.ready.noaa.gov/HYSPLIT.php),
+    libgfortran3 (Linux uniquement, installable via install_system_deps())
 Imports:
     data.table,
     sf,
@@ -24,9 +26,12 @@ Imports:
 Remotes:
     rich-iannone/splitr
 Suggests:
-    ggplot2,
-    viridis,
     gridExtra,
+    ggmap,
+    ggrepel,
+    fst,
+    viridis,
+    ggspatial,
     ggrepel
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
