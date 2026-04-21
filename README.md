@@ -51,7 +51,9 @@ GITHUB_PAT=ghp_your_token_here
 
 Save, then **restart R**.
 
-### Step 3 — Install system dependency (Linux only) and Splitrs
+### (Optionnal) Step 1 bis — Install system dependency (Linux only) and Splitrs
+
+Should be installed directly with the package, but if not, then : 
 
 HYSPLIT requires `libgfortran3`, which is not available on recent Ubuntu/Debian by default:
 
@@ -68,11 +70,13 @@ pak::pak('rich-iannone/splitr')
 > **macOS:** this step installs `gcc` via Homebrew automatically.  
 > **Windows:** not supported — use WSL2 (Ubuntu) instead.
 
-### Step 4 — Open vignettes
+### (Optionnal) Step 1 bis — Open vignettes
 
 vignette("get-started", package = "UpdatedDisperseR")
 
-### Step 5 — Create the working directory structure
+### Step 2 — Create the working directory structure
+
+You can open `inst/scripts/Step_By_Step.R` to get a full walkthrough
 
 ```r
 UpdatedDisperseR::create_dirs("~/work")
@@ -92,7 +96,7 @@ This creates:
       logs/
 ```
 
-### Step 6 — Add your input files
+### Step 3 — Add your input files
 
 | File | Where to put it | Description |
 |---|---|---|
@@ -101,7 +105,7 @@ This creates:
 
 ---
 
-## Step 7 - Running a simulation (with the Script or without)
+## Step 4 - Running a simulation (with the Script or without)
 
 Open `inst/scripts/Disperser Year Job.R` and edit the `CONFIG` block at the top:
 
@@ -141,7 +145,7 @@ exposure/
 
 Now you have your csv results, there is additionnal function you could use
 
-## Bonus Step - Visualisation
+### (Optionnal)  Step 5 - Visualisation
 
 ```r
 library(UpdatedDisperseR)
@@ -166,7 +170,7 @@ plot_impact_sf_academic(
 )
 ```
 
-## Bonus Step - Aggregation
+## (Optionnal) Step 5 - Aggregation
 
 ```r
 # Aggregate by month (sum across all units)
