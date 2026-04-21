@@ -26,17 +26,20 @@ Imports:
     maps,
     rnaturalearth,
     tibble,
-    ncdf4
-Remotes:
-    rich-iannone/splitr
-Suggests:
+    ncdf4,
+    downloader,
+    ggplot2,
+    ggsn,
+    tidyverse,
+    rmarkdown,
+    scales,
     gridExtra,
     ggmap,
     ggrepel,
-    fst,
-    viridis,
     ggspatial,
-    ggrepel
+    viridis
+Remotes:
+    rich-iannone/splitr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
