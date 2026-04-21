@@ -12,6 +12,7 @@ SystemRequirements: HYSPLIT (https://www.ready.noaa.gov/HYSPLIT.php),
 VignetteBuilder: knitr
 Imports:
     data.table,
+    magrittr,
     sf,
     terra,
     raster,
