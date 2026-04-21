@@ -45,7 +45,7 @@ define_inputs <-
     )
     
     # get only the input year for which we get units data
-    out <- out[year==lubridate::year(start_day)]
+    out <- out[lubridate::year(start_day) == year, ]
     out <- unique(merge(out, units, by = c('ID', 'year')))
     
     return(out)
