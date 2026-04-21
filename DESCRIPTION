@@ -11,6 +11,7 @@ SystemRequirements: HYSPLIT (https://www.ready.noaa.gov/HYSPLIT.php),
     libgfortran3 (Linux uniquement, installable via install_system_deps())
 VignetteBuilder: knitr
 Imports:
+    splitr,
     sp,
     dplyr,
     data.table,
