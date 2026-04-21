@@ -99,7 +99,7 @@ This creates:
 
 ---
 
-## Step 7 - Running a simulation
+## Step 7 - Running a simulation (with the Script or without)
 
 Open `inst/scripts/Disperser Year Job.R` and edit the `CONFIG` block at the top:
 
