@@ -14,6 +14,8 @@ R package for running HYSPLIT dispersion simulations at scale and computing expo
 
 ---
 
+All of those steps are available in one R file : Step_by_step.R
+
 ## Installation
 
 ### Step 1 — Install the package
