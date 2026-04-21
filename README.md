@@ -19,18 +19,13 @@ R package for running HYSPLIT dispersion simulations at scale and computing expo
 ### Step 1 — Install the package
 
 ```r
-# Install devtools if needed
-install.packages("devtools")
+# Installer pak (une seule fois)
+install.packages("pak")
 
-# Install UpdatedDisperseR 
-devtools::install_github(
-  "Djallexi/Package-Grid-HYSPLIT",
-  build_vignettes = TRUE,
-  dependencies = TRUE,
-  force = TRUE
-)
+# Installer ton package depuis GitHub avec pak
+pak::pak("Djallexi/Package-Grid-HYSPLIT")
 
-# Call UpdatedDisperseR
+# Charger le package
 library(UpdatedDisperseR)
 ```
 
