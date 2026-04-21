@@ -29,7 +29,7 @@ pak::pak("Djallexi/Package-Grid-HYSPLIT")
 library(UpdatedDisperseR)
 ```
 
-### Step 2 — Set your GitHub token (required to download met data)
+### (Optionnal) Step 1 bis — Set your GitHub token (if needed)
 
 If you clusterise multiple UpdatedDisperseR R session and want to launch simulations during a short time periode. A GitHub PAT can be required.
 
