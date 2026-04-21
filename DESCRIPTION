@@ -29,7 +29,6 @@ Imports:
     ncdf4,
     downloader,
     ggplot2,
-    ggsn,
     tidyverse,
     rmarkdown,
     scales,
