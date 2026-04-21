@@ -73,8 +73,7 @@ vignette("get-started", package = "UpdatedDisperseR")
 ### Step 5 — Create the working directory structure
 
 ```r
-library(UpdatedDisperseR)
-create_dirs("~/work")
+UpdatedDisperseR::create_dirs("~/work")
 ```
 
 This creates:
