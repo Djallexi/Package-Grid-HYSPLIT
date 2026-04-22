@@ -1,4 +1,8 @@
-devtools::install_github("Djallexi/Package-Grid-HYSPLIT")
+# Install pak
+install.packages("pak")
+
+# Install package
+pak::pak("Djallexi/Package-Grid-HYSPLIT", upgrade = TRUE)
 
 library(UpdatedDisperseR)
 
