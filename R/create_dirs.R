@@ -29,11 +29,6 @@ create_dirs <- function(location=file.path('~', 'Desktop')) {
   assign("input_dir", input_dir, envir = .GlobalEnv)
   dir.create(input_dir, showWarnings = FALSE)
   
-  ########### ZCTA
-  zcta_dir <- file.path(input_dir, 'zcta_500k')
-  assign("zcta_dir", zcta_dir, envir = .GlobalEnv)
-  dir.create(zcta_dir, showWarnings = FALSE)
-  
   ########### HPBL
   hpbl_dir <- file.path(input_dir, 'hpbl')
   assign("hpbl_dir", hpbl_dir, envir = .GlobalEnv)
