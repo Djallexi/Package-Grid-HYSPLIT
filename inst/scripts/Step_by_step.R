@@ -15,6 +15,16 @@ UpdatedDisperseR::create_dirs("~/work") #Create directories
 #Now the setup is complete, you can open Disperser Year Job.R, setup and run it.
 #All the setup is in CONFIG, it's all documented.
 
+#While script is running as a background job, you can use this function to estimate the duration.
+
+UpdatedDisperseR::check_progress_Hysplit(
+  watch = TRUE,
+  hysp_dir   = "/var/tmp/hysp_data",
+  output_dir = "~/work/main/output/linked_grids",
+  total      = 200000,
+  interval = 20
+)
+
 #Once the script is over, you have results csv created in main/output/linked_grids (and in main/output/exposure)
 
 #With those csv you can create graph
