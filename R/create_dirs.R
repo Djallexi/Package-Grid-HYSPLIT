@@ -64,16 +64,16 @@ create_dirs <- function(location=file.path('~', 'Desktop')) {
   assign("hysp_dir", hysp_dir, envir = .GlobalEnv)
   dir.create(hysp_dir, showWarnings = FALSE)
   
-  ########### Ziplinks
-  ziplink_dir <- file.path(output_dir, 'ziplinks')
-  assign("ziplink_dir", ziplink_dir, envir = .GlobalEnv)
-  dir.create(ziplink_dir, showWarnings = FALSE)
+  ########### links
+  links_dir <- file.path(output_dir, 'links')
+  assign("links_dir", link_dir, envir = .GlobalEnv)
+  dir.create(links_dir, showWarnings = FALSE)
   
   ########### Exposure
-  exp_dir <- file.path(output_dir, 'exp')
-  assign("exp_dir", exp_dir, envir = .GlobalEnv)
-  dir.create(exp_dir, showWarnings = FALSE)
-  exp_dir
+  exposure_dir <- file.path(output_dir, 'exposure')
+  assign("exposure_dir", exposure_dir, envir = .GlobalEnv)
+  dir.create(exposure_dir, showWarnings = FALSE)
+  exposure_dir
   
   ########### Graph
   graph_dir <- file.path(output_dir, 'graph')
