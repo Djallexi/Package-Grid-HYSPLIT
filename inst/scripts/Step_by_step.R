@@ -21,8 +21,8 @@ UpdatedDisperseR::check_progress_Hysplit(
   watch = TRUE,
   hysp_dir   = "/var/tmp/hysp_data",
   output_dir = "~/work/main/output/linked_grids",
-  total      = 200000,
-  interval = 20
+  total      = 200000, #Number of simulations
+  interval = 20 #Seconds between each update
 )
 
 #Once the script is over, you have results csv created in main/output/linked_grids (and in main/output/exposure)
