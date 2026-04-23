@@ -2,11 +2,11 @@ plot_impact_sf_academic <- function(df,
                                     metric_col        = "N",
                                     lon_col           = "lon",
                                     lat_col           = "lat",
-                                    uid_col    = "uID",      # ← NOUVEAU
-                                    uid_filter = NULL,       # ← NOUVEAU : NULL = tous, sinon c(6, 12, ...)
-                                    year              = NULL,      # ← NOUVEAU
-                                    month             = NULL,      # ← NOUVEAU
-                                    yearmonth_col     = "yearmonth", # ← NOUVEAU
+                                    uid_col    = "uID",     
+                                    uid_filter = NULL,        NULL = tous, sinon c(6, 12, ...)
+                                    year              = NULL,    
+                                    month             = NULL,     
+                                    yearmonth_col     = "yearmonth", 
                                     plant_locations   = NULL,
                                     map_data_custom   = NULL,
                                     padding           = 2,
@@ -40,14 +40,28 @@ plot_impact_sf_academic <- function(df,
   
   # ── Filtrage par année / mois ─────────────────────────────────────────────────
   if (!is.null(year) || !is.null(month)) {
-    if (!yearmonth_col %in% names(df_work))
-      stop("Colonne '", yearmonth_col, "' introuvable dans df.")
     
-    # yearmonth est au format YYYYMM (ex: 202201)
-    ym_vals <- df_work[[yearmonth_col]]
+    has_yearmonth_col <- yearmonth_col %in% names(df_work)
+    has_separate_cols <- all(c("year", "month") %in% names(df_work))
     
-    year_vals  <- as.integer(ym_vals) %/% 100L
-    month_vals <- as.integer(ym_vals) %%  100L
+    if (has_yearmonth_col) {
+      # Cas 1 — colonne combinée YYYYMM (ex: 202104)
+      ym_vals    <- df_work[[yearmonth_col]]
+      year_vals  <- as.integer(ym_vals) %/% 100L
+      month_vals <- as.integer(ym_vals) %%  100L
+      
+    } else if (has_separate_cols) {
+      # Cas 2 — colonnes séparées "year" et "month"
+      year_vals  <- as.integer(df_work[["year"]])
+      month_vals <- as.integer(df_work[["month"]])
+      message("Colonnes séparées 'year' et 'month' détectées.")
+      
+    } else {
+      stop(
+        "Impossible de filtrer par date : ni la colonne '", yearmonth_col,
+        "' ni les colonnes séparées 'year'+'month' ne sont présentes dans df."
+      )
+    }
     
     mask <- rep(TRUE, nrow(df_work))
     if (!is.null(year))  mask <- mask & (year_vals  == as.integer(year))
@@ -60,8 +74,8 @@ plot_impact_sf_academic <- function(df,
     
     message(sprintf("Filtrage : %d lignes conservées (year=%s, month=%s)",
                     nrow(df_work),
-                    ifelse(is.null(year),  "all", year),
-                    ifelse(is.null(month), "all", month)))
+                    ifelse(is.null(year),  "all", as.character(year)),
+                    ifelse(is.null(month), "all", as.character(month))))
   }
   
   # ── Filtrage par UID de centrale ──────────────────────────────────────────────
