@@ -61,8 +61,10 @@ HYSPLIT requires `libgfortran3`, which is not available on recent Ubuntu/Debian 
 ```r
 library(UpdatedDisperseR)
 
-#Install system dependency
+#Check if system dependency are installed and if not, it will be installed
 install_system_deps()
+
+#Both libgfortran3 and SplitR should be installed by now, but if not then
 
 #Install SplitR
 pak::pak('rich-iannone/splitr')
