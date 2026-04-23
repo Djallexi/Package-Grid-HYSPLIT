@@ -102,7 +102,7 @@ This creates:
 | File | Where to put it | Description |
 |---|---|---|
 | `hpbl.mon.mean.nc` | `~/work/main/input/hpbl/` | Monthly PBL height (NCEP/NCAR). Download from https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.derived.html |
-| `your_units.csv` | `~/work/main/input/Plant Units/` | Your emission sources — must include columns: `ID`, `year`, `Latitude`, `Longitude`, `totcap`, `SO2_total_kt`, `Type.of.Coal` |
+| `your_units.csv` | `~/work/main/input/Plant Units/` | Your emission sources — must include columns: `ID` (identification column for each plant), `year`(if panel data), `Latitude`, `Longitude`, `SO2_total_kt` (for weighted results) |
 
 ---
 
