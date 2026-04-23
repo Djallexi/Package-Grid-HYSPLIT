@@ -3,7 +3,7 @@ plot_impact_sf_academic <- function(df,
                                     lon_col           = "lon",
                                     lat_col           = "lat",
                                     uid_col    = "uID",     
-                                    uid_filter = NULL,        NULL = tous, sinon c(6, 12, ...)
+                                    uid_filter = NULL,        #NULL = tous, sinon c(6, 12, ...)
                                     year              = NULL,    
                                     month             = NULL,     
                                     yearmonth_col     = "yearmonth", 
