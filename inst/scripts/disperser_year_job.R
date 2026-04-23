@@ -9,6 +9,8 @@
 # ============================================================
 # CONFIGURATION
 # ============================================================
+TARGET_YEAR <- 2022    # ← changer uniquement cette valeur
+
 CONFIG <- list(
   # Github tokens
   github_pat     = "",
@@ -17,10 +19,10 @@ CONFIG <- list(
   units_file     = "~/work/main/input/Plant Units/units_coal_SO2_finalv3.csv",
   pblheight_file = "~/work/main/input/hpbl/hpbl.mon.mean.nc",
   
-  # Simulation
-  year           = 2022,
-  startday       = "2022-01-04",
-  endday         = "2022-01-06",
+  # Simulation (dérivés de TARGET_YEAR)
+  year           = TARGET_YEAR,
+  startday       = paste0(TARGET_YEAR, "-01-01"),
+  endday         = paste0(TARGET_YEAR, "-12-31"),
   start_hours    = c(0, 12),
   duration       = 120,
   npart          = 100,
@@ -31,8 +33,8 @@ CONFIG <- list(
   yearmons_end_month   = "12",
   duration_run_hours   = 120,
   
-  # Exposure
-  year_exposure = 2022,
+  # Exposure (dérivé de TARGET_YEAR)
+  year_exposure = TARGET_YEAR,
   pollutant     = "SO2_month",
   
   # Répertoires
@@ -49,7 +51,7 @@ CONFIG <- list(
   
   # Options
   overwrite   = TRUE,
-  subset_days = NULL   # NULL = every day / example : c(1,15) = in a month, only day 1 and 15
+  subset_days = NULL   # NULL = every day / example : c(1,15) = days 1 and 15 only
 )
 
 Sys.setenv(GITHUB_PAT = CONFIG$github_pat)
