@@ -161,6 +161,8 @@ plot_impact_sf_academic(
   year             = 2022,
   month            = 4,
   metric_col       = "hyads",
+  lon_col           = "lon",
+  lat_col           = "lat",
   uid_col          = "uID",
   uid_filter       = NULL,       # NULL = all units
   color_palette    = "sentinel",
