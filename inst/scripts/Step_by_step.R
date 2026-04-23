@@ -57,7 +57,7 @@ plot <- plot_impact_sf_academic(
 
 
 #by month
-df_month <- aggregate_hyads_dt(data,
+df_month <- aggregate_table(data,
                                by_uid    = FALSE,
                                by_month  = TRUE,
                                lat_col   = "lat",
@@ -66,7 +66,7 @@ df_month <- aggregate_hyads_dt(data,
                                month_col = "yearmonth",
                                value_col = "hyads")
 #by month
-df_uID <- aggregate_hyads_dt(data,
+df_uID <- aggregate_table(data,
                                by_uid    = FALSE,
                                by_month  = TRUE,
                                lat_col   = "lat",
@@ -75,7 +75,7 @@ df_uID <- aggregate_hyads_dt(data,
                                month_col = "yearmonth",
                                value_col = "hyads")
 #both
-df_total <- aggregate_hyads_dt(data,
+df_total <- aggregate_table(data,
                                by_uid    = TRUE,
                                by_month  = TRUE,
                                lat_col   = "lat",
