@@ -15,7 +15,7 @@ R package for running HYSPLIT dispersion simulations at scale and computing expo
 
 ---
 
-All of those steps are available in one R file : Step_by_step.R
+All of those steps are available in the R file : Step_by_step.R
 
 ## Installation
 
@@ -215,3 +215,6 @@ df_uid <- aggregate_hyads_dt(exp,
 
 If you use this package in your research, please cite:  
 > [your citation here]
+
+## Contact
+For any inquiry : alexis.baudrier@polytechnique.edu
