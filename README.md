@@ -179,7 +179,7 @@ plot_impact_sf_academic(
 
 ```r
 # Aggregate by month (sum across all units)
-df_month <- aggregate_hyads_dt(exp,
+df_month <- aggregate_table(exp,
   by_uid    = FALSE,
   by_month  = TRUE,
   lat_col   = "lat", lon_col = "lon",
@@ -188,7 +188,7 @@ df_month <- aggregate_hyads_dt(exp,
 )
 
 # Aggregate by unit (sum across all months)
-df_uid <- aggregate_hyads_dt(exp,
+df_uid <- aggregate_table(exp,
   by_uid    = TRUE,
   by_month  = FALSE,
   lat_col   = "lat", lon_col = "lon",
