@@ -69,13 +69,13 @@ disperser_link_grids <- function(month_YYYYMM = NULL,
   
   ## name the eventual output file
   output_file <- file.path(
-    ziplink_dir,
+    link_dir,
     paste0("gridlinks_", unit$ID, "_", 
            format(start.date, "%Y-%m-%d"), "_",
            format(end.date, "%Y-%m-%d"), ".fst")
   )
   
-  ## Run the zip linkages
+  ## Run the linkages
   if (!file.exists(output_file) || overwrite) {
     
     ## identify dates for hyspdisp averages and dates for files to read in
