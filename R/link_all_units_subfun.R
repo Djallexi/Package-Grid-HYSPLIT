@@ -49,7 +49,7 @@ disperser_link_grids <- function(month_YYYYMM = NULL,
   
   #' @export link_to
   link_to <- function(d,
-                      link.to = 'zips',
+                      link.to = 'grids',
                       p4string,
                       zc = NULL,
                       cw = NULL,
@@ -263,7 +263,7 @@ disperser_link_grids <- function(month_YYYYMM = NULL,
   month_YYYYMM <- as(month_YYYYMM, 'character')
   
   ## name the eventual output file
-  output_file <- file.path(ziplink_dir,
+  output_file <- file.path(links_dir,
                            paste0("gridlinks_",
                                   unit$ID, "_",
                                   start.date, "_",
