@@ -46,7 +46,7 @@ create_dirs <- function(location=file.path('~', 'Desktop')) {
   
   ########### Map
   plantunits_dir <- file.path(input_dir, 'Plant Units')
-  assign("map_dir", plantunits_dir, envir = .GlobalEnv)
+  assign("plantunits_dir", plantunits_dir, envir = .GlobalEnv)
   dir.create(plantunits_dir, showWarnings = FALSE)
   
   ###### Process
