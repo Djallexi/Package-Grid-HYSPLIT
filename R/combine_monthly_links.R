@@ -57,12 +57,18 @@ combine_monthly_links <- function(
   }
 
   # harmonisation de l'extent
+ # harmonisation de l'extent — inutile si un seul mois
   out.d   <- mget(names.map)
   out.r   <- lapply(out.d, rasterFromXYZ)
   out.ids <- lapply(out.d, function(dt) names(dt))
 
-  out.e  <- extent(Reduce(extend, out.r))
-  out.b  <- lapply(out.r, extend, out.e)
+  if (length(out.r) > 1) {
+    out.e  <- extent(Reduce(extend, out.r))
+    out.b  <- lapply(out.r, extend, out.e)
+  } else {
+    out.b  <- out.r          # rien à harmoniser
+  }
+
   out.dt <- lapply(out.b, function(x) data.table(rasterToPoints(x)))
   out.dt <- lapply(
     out.dt,
