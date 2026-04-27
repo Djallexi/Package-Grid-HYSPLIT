@@ -69,7 +69,7 @@ disperser_link_grids <- function(month_YYYYMM = NULL,
   
   ## name the eventual output file
   output_file <- file.path(
-    link_dir,
+    links_dir,
     paste0("gridlinks_", unit$ID, "_", 
            format(start.date, "%Y-%m-%d"), "_",
            format(end.date, "%Y-%m-%d"), ".fst")
