@@ -66,7 +66,7 @@ create_dirs <- function(location=file.path('~', 'Desktop')) {
   
   ########### links
   links_dir <- file.path(output_dir, 'links')
-  assign("links_dir", link_dir, envir = .GlobalEnv)
+  assign("links_dir", links_dir, envir = .GlobalEnv)
   dir.create(links_dir, showWarnings = FALSE)
   
   ########### Exposure
