@@ -10,6 +10,7 @@ R package for running HYSPLIT dispersion simulations at scale and computing expo
 
 - R ≥ 4.1
 - Linux (Ubuntu/Debian recommended) or macOS
+- Windows isn't supported for now
 - ~Some GB free disk space for meteorological data and results from simulations
 - For large simulations : computationnal power (multiple cores)
 
