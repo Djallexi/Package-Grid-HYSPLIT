@@ -1,6 +1,6 @@
 # UpdatedDisperseR
 
-R package for running HYSPLIT dispersion simulations at scale and computing exposure grids from emission sources (coal plants, industrial units, etc.).
+R package for running multiple HYSPLIT dispersion simulations at scale and computing exposure grids from emission sources (coal plants, industrial units, etc.).
 
 **Pipeline:** Emission sources → HYSPLIT simulations → Linked grids → Exposure data frame
 
@@ -10,7 +10,7 @@ R package for running HYSPLIT dispersion simulations at scale and computing expo
 
 - R ≥ 4.1
 - Linux (Ubuntu/Debian recommended) or macOS
-- Windows isn't supported for now
+- Windows isn't supported for now (use WSL)
 - ~Some GB free disk space for meteorological data and results from simulations
 - For large simulations : good computationnal power (multiple cores)
 
@@ -115,7 +115,7 @@ This creates:
 
 ---
 
-## Step 4 - Running a simulation (with the Script or without)
+## Step 4 - Running a Multiple Simulations Run (with the Script or without)
 
 Open `inst/scripts/Disperser Year Job.R` and edit the `CONFIG` block at the top:
 
@@ -126,11 +126,11 @@ CONFIG <- list(
   units_file     = "~/work/main/input/Plant Units/your_file.csv",
   pblheight_file = "~/work/main/input/hpbl/hpbl.mon.mean.nc",
 
-  startday       = paste0(TARGET_YEAR, "-01-01"),  # simulation start
-  endday         = paste0(TARGET_YEAR, "-12-31"),  # simulation end
-  duration       = 120,    # hours per trajectory
-  npart          = 100,    # particles per simulation
-  numberofplants = 50,     # top N emitters to simulate
+  startday       = paste0(TARGET_YEAR, "-01-01"),  # Start of the Run
+  endday         = paste0(TARGET_YEAR, "-12-31"),  # End of the Run
+  duration       = 120,    # hours per simulation
+  npart          = 100,    # particles emitted at t=0 per simulation
+  numberofplants = 50,     # top N emitters per simulation
 
   cores          = parallel::detectCores() - 1
 )
