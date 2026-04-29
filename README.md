@@ -93,11 +93,17 @@ This creates:
   main/
     input/
       hpbl/            ← put hpbl.mon.mean.nc here
+      map/
+      meteo/
       Plant Units/     ← put your units CSV here
     output/
-      linked_grids/
       exposure/
+      graph/
+      hysplit/
+      linked_grids/
+      links/
       logs/
+      rdata/
 ```
 
 ### Step 3 — Add your input files
