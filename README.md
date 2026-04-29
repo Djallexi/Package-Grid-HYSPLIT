@@ -153,7 +153,7 @@ exposure/
 
 ---
 
-Now you have your csv results, there is additionnal function you could use
+Once you have your results in csv format, there is some optionnal functions you could use
 
 ### (Optionnal)  Step 5 - Visualisation
 
