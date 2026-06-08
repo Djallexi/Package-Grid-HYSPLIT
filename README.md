@@ -1,3 +1,5 @@
+Package made during my internship at CNRS
+
 # UpdatedDisperseR
 
 R package for running multiple HYSPLIT dispersion simulations at scale and computing exposure grids from emission sources (coal plants, industrial units, etc.).
